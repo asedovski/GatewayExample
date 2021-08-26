@@ -1,0 +1,202 @@
+{
+    "ReRoutes": [
+        // logs
+        {
+            "DownstreamPathTemplate": "/api/v1/logs/{everything}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "access-all-agents-logs",
+                    "Port": 80
+                }
+            ],
+            "UpstreamPathTemplate": "/api/v1/logs/{everything}",
+            "UpstreamHttpMethod": [ "Get", "Post" ]
+        },
+
+        // users
+        {
+            "DownstreamPathTemplate": "/api/v1/authentication/{everything}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "access-all-agents-users",
+                    "Port": 80
+                }
+            ],
+            "UpstreamPathTemplate": "/api/v1/authentication/{everything}",
+            "UpstreamHttpMethod": [ "Get", "Post" ]
+        },
+        {
+            "DownstreamPathTemplate": "/api/v1/anon/{everything}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "access-all-agents-users",
+                    "Port": 80
+                }
+            ],
+            "UpstreamPathTemplate": "/api/v1/anon/{everything}",
+            "UpstreamHttpMethod": [ "Get", "Post" ]
+        },
+        {
+            "DownstreamPathTemplate": "/api/v1/profile/{everything}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "access-all-agents-users",
+                    "Port": 80
+                }
+            ],
+            "UpstreamPathTemplate": "/api/v1/profile/{everything}",
+            "UpstreamHttpMethod": [ "Get", "Post" ],
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "ApiSecurity",
+                "AllowedScopes": []
+            }
+        },
+        {
+            "DownstreamPathTemplate": "/api/v1/user/{everything}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "access-all-agents-users",
+                    "Port": 80
+                }
+            ],
+            "UpstreamPathTemplate": "/api/v1/user/{everything}",
+            "UpstreamHttpMethod": [ "Get", "Post" ],
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "ApiSecurity",
+                "AllowedScopes": []
+            }
+        },
+        {
+            "DownstreamPathTemplate": "/api/v1/agency/{everything}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "access-all-agents-users",
+                    "Port": 80
+                }
+            ],
+            "UpstreamPathTemplate": "/api/v1/agency/{everything}",
+            "UpstreamHttpMethod": [ "Get", "Post" ],
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "ApiSecurity",
+                "AllowedScopes": []
+            }
+        },
+        {
+            "DownstreamPathTemplate": "/logo/{everything}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 80
+                }
+            ],
+            "UpstreamPathTemplate": "/logo/{everything}",
+            "UpstreamHttpMethod": [ "Get" ]
+        },
+
+        // notification
+        {
+            "DownstreamPathTemplate": "/api/v1/notification/{everything}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "access-all-agents-notifications",
+                    "Port": 80
+                }
+            ],
+            "UpstreamPathTemplate": "/api/v1/notification/{everything}",
+            "UpstreamHttpMethod": [ "Get", "Post" ]
+        },
+        {
+            "DownstreamPathTemplate": "/notifications/assets/{everything}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "access-all-agents-notifications",
+                    "Port": 80
+                }
+            ],
+            "UpstreamPathTemplate": "/notifications/assets/{everything}",
+            "UpstreamHttpMethod": [ "Get" ]
+        },
+
+        // contact
+        {
+            "DownstreamPathTemplate": "/api/v1/contact/{everything}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "access-all-agents-notifications",
+                    "Port": 80
+                }
+            ],
+            "UpstreamPathTemplate": "/api/v1/contact/{everything}",
+            "UpstreamHttpMethod": [ "Get", "Post" ]
+        },
+
+        // messages
+        {
+            "DownstreamPathTemplate": "/api/v1/message/{everything}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "access-all-agents-messages",
+                    "Port": 80
+                }
+            ],
+            "UpstreamPathTemplate": "/api/v1/message/{everything}",
+            "UpstreamHttpMethod": [ "Get", "Post" ]
+        },
+
+        // property
+        {
+            "DownstreamPathTemplate": "/api/v1/property/{everything}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "access-all-agents-property",
+                    "Port": 80
+                }
+            ],
+            "UpstreamPathTemplate": "/api/v1/property/{everything}",
+            "UpstreamHttpMethod": [ "Get", "Post" ]
+        },
+
+        // image
+        {
+            "DownstreamPathTemplate": "/api/v1/file/{everything}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "access-all-agents-property",
+                    "Port": 80
+                }
+            ],
+            "UpstreamPathTemplate": "/api/v1/file/{everything}",
+            "UpstreamHttpMethod": [ "Post" ]
+        },
+        {
+            "DownstreamPathTemplate": "/file/{everything}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "access-all-agents-property",
+                    "Port": 80
+                }
+            ],
+            "UpstreamPathTemplate": "/file/{everything}",
+            "UpstreamHttpMethod": [ "Get" ]
+        }
+    ],
+    "GlobalConfiguration": {
+        "BaseUrl": "access-all-agents-gateway:5000",
+        "RequestIdKey": "OcRequestId",
+        "AdministrationPath": "/administration"
+    }
+}

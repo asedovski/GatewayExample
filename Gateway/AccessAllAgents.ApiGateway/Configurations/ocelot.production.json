@@ -1,0 +1,139 @@
+{
+    "ReRoutes": [
+        // logs
+        {
+            "DownstreamPathTemplate": "/api/v1/logs/{everything}",
+            "DownstreamScheme": "http",
+            "ServiceName": "access-all-agents-logs",
+            "UpstreamPathTemplate": "/api/v1/logs/{everything}",
+            "UpstreamHttpMethod": ["Get", "Post"]
+        },
+
+        // users
+        {
+            "DownstreamPathTemplate": "/api/v1/authentication/{everything}",
+            "DownstreamScheme": "http",
+            "ServiceName": "access-all-agents-users",
+            "UpstreamPathTemplate": "/api/v1/authentication/{everything}",
+            "UpstreamHttpMethod": ["Get", "Post"]
+        },
+        {
+            "DownstreamPathTemplate": "/api/v1/anon/{everything}",
+            "DownstreamScheme": "http",
+            "ServiceName": "access-all-agents-users",
+            "UpstreamPathTemplate": "/api/v1/anon/{everything}",
+            "UpstreamHttpMethod": ["Get", "Post"]
+        },
+        {
+            "DownstreamPathTemplate": "/api/v1/profile/{everything}",
+            "DownstreamScheme": "http",
+            "ServiceName": "access-all-agents-users",
+            "UpstreamPathTemplate": "/api/v1/profile/{everything}",
+            "UpstreamHttpMethod": ["Get", "Post"],
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "ApiSecurity",
+                "AllowedScopes": []
+            }
+        },
+        {
+            "DownstreamPathTemplate": "/api/v1/user/{everything}",
+            "DownstreamScheme": "http",
+            "ServiceName": "access-all-agents-users",
+            "UpstreamPathTemplate": "/api/v1/user/{everything}",
+            "UpstreamHttpMethod": ["Get", "Post"],
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "ApiSecurity",
+                "AllowedScopes": []
+            }
+        },
+        {
+            "DownstreamPathTemplate": "/api/v1/agency/{everything}",
+            "DownstreamScheme": "http",
+            "ServiceName": "access-all-agents-users",
+            "UpstreamPathTemplate": "/api/v1/agency/{everything}",
+            "UpstreamHttpMethod": ["Get", "Post"],
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "ApiSecurity",
+                "AllowedScopes": []
+            }
+        },
+        {
+            "DownstreamPathTemplate": "/logo/{everything}",
+            "DownstreamScheme": "http",
+            "ServiceName": "access-all-agents-users",
+            "UpstreamPathTemplate": "/logo/{everything}",
+            "UpstreamHttpMethod": ["Get"]
+        },
+
+        // notification
+        {
+            "DownstreamPathTemplate": "/api/v1/notification/{everything}",
+            "DownstreamScheme": "http",
+            "ServiceName": "access-all-agents-notifications",
+            "UpstreamPathTemplate": "/api/v1/notification/{everything}",
+            "UpstreamHttpMethod": ["Get", "Post"]
+        },
+        {
+            "DownstreamPathTemplate": "/notifications/assets/{everything}",
+            "DownstreamScheme": "http",
+            "ServiceName": "access-all-agents-notifications",
+            "UpstreamPathTemplate": "/notifications/assets/{everything}",
+            "UpstreamHttpMethod": ["Get"]
+        },
+
+        // contact
+        {
+            "DownstreamPathTemplate": "/api/v1/contact/{everything}",
+            "DownstreamScheme": "http",
+            "ServiceName": "access-all-agents-notifications",
+            "UpstreamPathTemplate": "/api/v1/contact/{everything}",
+            "UpstreamHttpMethod": ["Get", "Post"]
+        },
+
+        // messages
+        {
+            "DownstreamPathTemplate": "/api/v1/message/{everything}",
+            "DownstreamScheme": "http",
+            "ServiceName": "access-all-agents-messages",
+            "UpstreamPathTemplate": "/api/v1/message/{everything}",
+            "UpstreamHttpMethod": ["Get", "Post"]
+        },
+
+        // property
+        {
+            "DownstreamPathTemplate": "/api/v1/property/{everything}",
+            "DownstreamScheme": "http",
+            "ServiceName": "access-all-agents-property",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "access-all-agents-property",
+                    "Port": 80
+                }
+            ],
+            "UpstreamPathTemplate": "/api/v1/property/{everything}",
+            "UpstreamHttpMethod": ["Get", "Post"]
+        },
+
+        // image
+        {
+            "DownstreamPathTemplate": "/api/v1/file/{everything}",
+            "DownstreamScheme": "http",
+            "ServiceName": "access-all-agents-property",
+            "UpstreamPathTemplate": "/api/v1/file/{everything}",
+            "UpstreamHttpMethod": ["Post"]
+        },
+        {
+            "DownstreamPathTemplate": "/file/{everything}",
+            "DownstreamScheme": "http",
+            "ServiceName": "access-all-agents-property",
+            "UpstreamPathTemplate": "/file/{everything}",
+            "UpstreamHttpMethod": ["Get"]
+        }
+    ],
+    "GlobalConfiguration": {
+        "ServiceDiscoveryProvider": {
+            "Namespace": "access-all-agents",
+            "Type": "kube"
+        }
+    }
+}

@@ -1,0 +1,17 @@
+﻿local_storage:
+  ip_address: "{MARIADB_HOST}"
+  port: "{MARIADB_PORT}"
+  username: "{MARIADB_USERNAME}"
+  password: "{MARIADB_PASSWORD}"
+  database: "{MARIADB_DATABASE}"
+  version: "{MARIADB_DB_VERSION}"
+
+queue_settings:
+  ip_address: "{RABBITMQ_HOST}"
+  port: "{RABBITMQ_PORT}"
+  username: "{RABBITMQ_USERNAME}"
+  password: "{RABBITMQ_PASSWORD}"
+
+image_config:
+  image_width: "500"
+  image_height: "500"

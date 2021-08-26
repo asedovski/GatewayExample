@@ -1,0 +1,178 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Scripts\DatabaseCreationScripts\00_drop_database.sql" />
+    <None Remove="Scripts\DatabaseCreationScripts\01_create_database.sql" />
+    <None Remove="Scripts\DatabaseCreationScripts\02_create_version_table.sql" />
+    <None Remove="Scripts\DatabaseCreationScripts\03_create_users_table.sql" />
+    <None Remove="Scripts\DatabaseCreationScripts\04_create_registrations_table.sql" />
+    <None Remove="Scripts\DatabaseCreationScripts\05_create_reset_tokens_table.sql" />
+    <None Remove="Scripts\DatabaseCreationScripts\06_create_login_attempts_table.sql" />
+    <None Remove="Scripts\DatabaseCreationScripts\07_create_refresh_tokens_table.sql" />
+    <None Remove="Scripts\DatabaseCreationScripts\08_create_logos_table.sql" />
+    <None Remove="Scripts\DatabaseDefaultScripts\1000_add_admin.sql" />
+    <None Remove="Scripts\DatabaseDefaultScripts\1001_add_admin.sql" />
+    <None Remove="Scripts\DatabaseDefaultScripts\1002_add_admin.sql" />
+    <None Remove="Scripts\DatabaseDefaultScripts\1003_add_admin.sql" />
+    <None Remove="Scripts\DatabaseDeleteScripts\LoginAttempt\01_delete_login_attempt.sql" />
+    <None Remove="Scripts\DatabaseDeleteScripts\Logo\01_delete_logo.sql" />
+    <None Remove="Scripts\DatabaseDeleteScripts\RefreshToken\01_delete_refresh_token.sql" />
+    <None Remove="Scripts\DatabaseDeleteScripts\RefreshToken\02_delete_refresh_token_by_user_id.sql" />
+    <None Remove="Scripts\DatabaseDeleteScripts\Registration\01_delete_registration.sql" />
+    <None Remove="Scripts\DatabaseDeleteScripts\ResetToken\01_delete_reset_token.sql" />
+    <None Remove="Scripts\DatabaseInsertScripts\LoginAttempt\01_insert_login_attempt.sql" />
+    <None Remove="Scripts\DatabaseInsertScripts\Logo\01_insert_logo.sql" />
+    <None Remove="Scripts\DatabaseInsertScripts\RefreshToken\01_insert_refresh_token.sql" />
+    <None Remove="Scripts\DatabaseInsertScripts\Registration\01_insert_registration.sql" />
+    <None Remove="Scripts\DatabaseInsertScripts\ResetToken\01_insert_reset_token.sql" />
+    <None Remove="Scripts\DatabaseInsertScripts\Users\01_insert_user.sql" />
+    <None Remove="Scripts\DatabaseQueryScripts\LoginAttempt\01_select_login_attempt_by_user_id.sql" />
+    <None Remove="Scripts\DatabaseQueryScripts\Logo\01_select_logo_by_content_id.sql" />
+    <None Remove="Scripts\DatabaseQueryScripts\Logo\02_select_logo_by_user_id.sql" />
+    <None Remove="Scripts\DatabaseQueryScripts\RefreshToken\01_select_refresh_token_by_user_id.sql" />
+    <None Remove="Scripts\DatabaseQueryScripts\Registration\01_select_registration_by_token.sql" />
+    <None Remove="Scripts\DatabaseQueryScripts\ResetToken\01_select_reset_token_by_reset_token.sql" />
+    <None Remove="Scripts\DatabaseQueryScripts\ResetToken\02_select_reset_token_by_user_id.sql" />
+    <None Remove="Scripts\DatabaseQueryScripts\Users\01_select_count_1.sql" />
+    <None Remove="Scripts\DatabaseQueryScripts\Users\02_select_user_by_email_address.sql" />
+    <None Remove="Scripts\DatabaseQueryScripts\Users\03_select_user_by_id.sql" />
+    <None Remove="Scripts\DatabaseQueryScripts\Users\04_select_user_by_user_id.sql" />
+    <None Remove="Scripts\DatabaseQueryScripts\Users\05_select_users.sql" />
+    <None Remove="Scripts\DatabaseUpdateScripts\LoginAttempt\01_increment_login_attempt.sql" />
+    <None Remove="Scripts\DatabaseUpdateScripts\Users\01_update_user.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.0.30" />
+    <PackageReference Include="EFCore.NamingConventions" Version="1.1.0" />
+    <PackageReference Include="Magick.NET-Q8-AnyCPU" Version="7.15.5" />
+    <PackageReference Include="MailKit" Version="2.5.2" />
+    <PackageReference Include="MimeKit" Version="2.5.2" />
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="3.1.1" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.5.0" />
+    <PackageReference Include="taglib-sharp-netstandard2.0" Version="2.1.0" />
+    <PackageReference Include="YamlDotNet" Version="8.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Common\AccessAllAgents.Email\AccessAllAgents.Email.csproj" />
+    <ProjectReference Include="..\..\..\Common\AccessAllAgents.Queue\AccessAllAgents.Queue.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Scripts\DatabaseCreationScripts\00_drop_database.sql">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\DatabaseCreationScripts\01_create_database.sql">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\DatabaseCreationScripts\03_create_users_table.sql">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\DatabaseCreationScripts\02_create_version_table.sql">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\DatabaseCreationScripts\04_create_registrations_table.sql">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\DatabaseCreationScripts\05_create_reset_tokens_table.sql">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\DatabaseCreationScripts\08_create_logos_table.sql">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\DatabaseCreationScripts\07_create_refresh_tokens_table.sql">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\DatabaseCreationScripts\06_create_login_attempts_table.sql">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\DatabaseDefaultScripts\1000_add_admin.sql" />
+    <EmbeddedResource Include="Scripts\DatabaseDefaultScripts\1001_add_admin.sql" />
+    <EmbeddedResource Include="Scripts\DatabaseDefaultScripts\1002_add_admin.sql" />
+    <EmbeddedResource Include="Scripts\DatabaseDefaultScripts\1003_add_admin.sql" />
+    <EmbeddedResource Include="Scripts\DatabaseDeleteScripts\LoginAttempt\01_delete_login_attempt.sql">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\DatabaseDeleteScripts\Logo\01_delete_logo.sql">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\DatabaseDeleteScripts\RefreshToken\02_delete_refresh_token_by_user_id.sql">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\DatabaseDeleteScripts\RefreshToken\01_delete_refresh_token.sql">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\DatabaseDeleteScripts\Registration\01_delete_registration.sql">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\DatabaseDeleteScripts\ResetToken\01_delete_reset_token.sql">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\DatabaseInsertScripts\LoginAttempt\01_insert_login_attempt.sql">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\DatabaseInsertScripts\Logo\01_insert_logo.sql">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\DatabaseInsertScripts\RefreshToken\01_insert_refresh_token.sql">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\DatabaseInsertScripts\Registration\01_insert_registration.sql">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\DatabaseInsertScripts\ResetToken\01_insert_reset_token.sql">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\DatabaseInsertScripts\Users\01_insert_user.sql">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\DatabaseQueryScripts\LoginAttempt\01_select_login_attempt_by_user_id.sql">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\DatabaseQueryScripts\Logo\02_select_logo_by_user_id.sql">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\DatabaseQueryScripts\Logo\01_select_logo_by_content_id.sql">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\DatabaseQueryScripts\RefreshToken\01_select_refresh_token_by_user_id.sql">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\DatabaseQueryScripts\Registration\01_select_registration_by_token.sql">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\DatabaseQueryScripts\ResetToken\02_select_reset_token_by_user_id.sql">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\DatabaseQueryScripts\ResetToken\01_select_reset_token_by_reset_token.sql">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\DatabaseQueryScripts\Users\03_select_user_by_id.sql">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\DatabaseQueryScripts\Users\04_select_user_by_user_id.sql">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\DatabaseQueryScripts\Users\05_select_users.sql">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\DatabaseQueryScripts\Users\02_select_user_by_email_address.sql">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\DatabaseQueryScripts\Users\01_select_count_1.sql">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\DatabaseUpdateScripts\LoginAttempt\01_increment_login_attempt.sql">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\DatabaseUpdateScripts\Users\01_update_user.sql">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>

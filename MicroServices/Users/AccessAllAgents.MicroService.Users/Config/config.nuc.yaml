@@ -1,0 +1,17 @@
+﻿local_storage:
+  ip_address: "192.168.1.170"
+  port: "3307"
+  username: "khashayar"
+  password: "@Khashayar0"
+  database: "access_all_agents_users"
+  version: "1.0"
+
+queue_settings:
+  ip_address: "192.168.1.196"
+  port: "5672"
+  username: "accessallagents"
+  password: "@Khashayar0"
+
+image_config:
+  image_width: "500"
+  image_height: "500"
